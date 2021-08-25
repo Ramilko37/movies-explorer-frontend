@@ -1,0 +1,128 @@
+.profile {
+    height: 92.4vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile__container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .profile__greeting {
+    margin: 0;
+    margin-bottom: 123px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    align-self: center;
+  }
+  
+  .profile__form {
+    width: 100%;
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .profile__form-label {
+    width: 100%;
+    display: flex;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    border-bottom: 1px solid #000;
+    color: #000;
+    padding-bottom: 16px;
+  }
+  
+  .profile__form-label:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .profile__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    color: #000;
+    font-size: 11px;
+    line-height: 13px;
+
+  }
+  
+  .profile__input:active {
+    border: none;
+    outline: none;
+  }
+  
+  .profile__button {
+    border: none;
+    outline: none;
+    transition: opacity .5s;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .profile__button:hover {
+    opacity: .7;
+  }
+  
+  .profile__button:first-of-type {
+    margin-top: 220px;
+  }
+  
+  .profile__button_type_submit {
+    color: #000;
+  }
+  
+  .profile__button_type_logout {
+    color: #FF004D;
+    margin-bottom: 70px;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .profile__greeting {
+      margin-bottom: 96px;
+    }
+
+    .profile__button:first-of-type {
+      margin-top: 210px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .profile {
+      padding: 70px 30px 0;
+      height: 83.8vh;
+    }
+
+    .profile__greeting {
+      margin-bottom: 80px;
+    }
+
+    .profile__button:first-of-type {
+      margin-top: 379px;
+    }
+
+    .profile__button_type_logout {
+      margin-bottom: 30px;
+    }
+  }
