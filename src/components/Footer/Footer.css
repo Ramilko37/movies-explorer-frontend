@@ -1,0 +1,33 @@
+.footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70px;
+    border-top: solid #E8E8E8 1px;
+}
+
+.footer__copy {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.footer::before {
+    position: absolute;
+    top: -36px;
+    left: 0;
+    width: 100%;
+    content: "Учебный проект Яндекс.Практикум х BeatFilm.";
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #A0A0A0;
+}
+
+.footer__link {
+    font-size: 13px;
+    line-height: 16px;
+    color: #000;
+    text-decoration: none;
+    margin-left: 20px;
+}
