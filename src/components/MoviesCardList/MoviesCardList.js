@@ -13,7 +13,9 @@ const MoviesCardList = () => {
         <MoviesCard />
         <MoviesCard />
       </ul>
-      <button className='card-list__more-button'>Ещё</button>
+        <div className="card-list__wrapper">
+            <button className='card-list__more-button'>Ещё</button>
+        </div>
     </div>
   )
 };

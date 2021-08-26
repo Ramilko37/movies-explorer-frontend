@@ -21,7 +21,7 @@
 
   .card-list__more-button {
     padding: 0;
-    margin: 50px 480px 159px;
+    margin: 20px auto 60px;
     width: 320px;
     height: 36px;
     outline: none;
@@ -35,6 +35,20 @@
     color: #000;
     transition: opacity .5s;
   }
+
+@media screen and (max-width: 425px) {
+  .card-list__more-button {
+    width: 240px;
+  }
+}
+
+
+.card-list__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
 
   .card-list__more-button:hover {
     cursor: pointer;

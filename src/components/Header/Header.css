@@ -17,6 +17,12 @@
     margin: 0 70px;
 }
 
+@media screen and (max-width: 768px){
+    .header__container {
+        margin: 0 30px;
+    }
+}
+
 .header__container-movies {
     height: 74px;
     display: flex;
@@ -39,7 +45,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
 
 
     .header__container {

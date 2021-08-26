@@ -10,7 +10,7 @@ const Student = () => {
             <div className="student-wrapper">
 
                 <p className="student__name">Рамиль</p>
-                <p className="student__adout">Фронтенд-разработчик, 31 год</p>
+                <p className="student__about">Фронтенд-разработчик, 31 год</p>
                 <p className="student__text">
                     Я живу в Москве. После долгих лет работы в нелюбимой профессии я наконец нашел дело,
                     которое доставляет мне удовольствие. Практикум дал мне все необходимое для того, чтобы начать долгий и
