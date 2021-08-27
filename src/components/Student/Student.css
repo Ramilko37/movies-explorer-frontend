@@ -1,0 +1,122 @@
+.student {
+    padding: 110px 70px 100px;
+}
+
+@media screen and (max-width: 520px) {
+    .student {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 18px;
+    }
+}
+
+.student__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 100px;
+}
+@media screen and (max-width: 520px) {
+    .student__info {
+        flex-direction: column;
+    }
+}
+
+.student-wrapper {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    max-height: 326px;
+}
+
+@media screen and (max-width: 520px) {
+    .student-wrapper {
+        margin-top: 40px;
+        order: 2;
+    }
+}
+
+.student__name {
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    margin: 0 0 14px;
+}
+
+@media screen and (max-width: 425px) {
+    .student__name {
+        margin: 0;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -0.04em;
+
+        color: #000000;
+    }
+}
+
+.student__about {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0 0 30px;
+    max-height: 270px;
+}
+
+@media screen and (max-width: 425px) {
+    .student__about {
+        margin: 20px 0 20px;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+
+.student__text {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+}
+
+@media screen and (max-width: 425px) {
+    .student__text {
+        margin: 0 0 40px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 16px;
+        color: #000000;
+    }
+}
+
+
+.student__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+    text-decoration: none;
+}
+
+.student__link:first-of-type {
+    margin-right: 20px;
+}
+
+.student__photo {
+    width: 270px;
+    height: 327px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 425px) {
+    .student__photo {
+        width: 292px;
+        height: 352px;
+        flex-direction: column;
+    }
+}

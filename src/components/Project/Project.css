@@ -1,0 +1,128 @@
+.project {
+    padding: 110px 70px 140px;
+}
+
+@media screen and (max-width: 425px) {
+    .project {
+        padding: 70px 18px ;
+    }
+}
+
+.project-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 92px;
+}
+
+@media screen and (max-width: 425px) {
+    .project-wrapper {
+        flex-direction: column;
+        margin-bottom: 4px;
+    }
+}
+
+.project-article__item {
+    width: calc(100% - (70px * 2));
+    max-width: 550px;
+    padding-right: 10px;
+}
+
+.project-article__title {
+    margin: 0 0 26px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+}
+@media screen and (max-width: 768px) {
+    .project-article__title {
+
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.04em;
+    }
+}
+
+.project-article__text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+@media screen and (max-width: 425px) {
+    .project-article__text {
+        margin: 0 0 56px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-article__text {
+        margin: 0 30px 56px 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+.stages {
+    display: flex;
+}
+
+.stages__item {
+    position: relative;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.stages__item:first-of-type {
+    width: 25%;
+    background-color: #2BE080;
+    color: #000000;
+}
+@media screen and (max-width: 425px) {
+    .stages__item:first-of-type {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stages__item:first-of-type {
+        width: 140px;
+    }
+}
+
+.stages__item:last-of-type {
+    width: 75%;
+    background-color: #F2F2F2;
+}
+
+@media screen and (max-width: 425px) {
+    .stages__item:last-of-type {
+        width: 184px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stages__item:last-of-type {
+        width: 528px;
+    }
+}
+
+.stages__item::before {
+    position: absolute;
+    color: #A0A0A0;
+    bottom: -34px;
+    font-family: "Inter", "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.stages__item:first-of-type::before {
+    content: "Back-end";
+}
+
+.stages__item:last-of-type::before {
+    content: "Front-end";
+}
