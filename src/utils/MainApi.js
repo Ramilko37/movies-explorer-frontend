@@ -13,12 +13,12 @@ function response(res) {
 }
 
 export const getUserInfo = () => {
-    return fetch(`${BASE_URL}/users/me`), {
+    return fetch(`${BASE_URL}/users/me`, {
         headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
         },
-    });
+    })
         .then(response)
         .catch((err) => console.log(`Ошибка ${err.status} : ${err.message}`));
 };
@@ -59,7 +59,7 @@ export const getSavedMovies = () => {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
         },
-    });
+    })
         .then(response)
         .catch((err) => console.log(`Ошибка ${err.status} : ${err.message}`));
 };
@@ -72,7 +72,7 @@ export const addToSavedMovies = (movie) => {
             Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(movie),
-    });
+    })
         .then(response)
         .catch((err) => console.log(`Ошибка ${err.status} : ${err.message}`));
 };
@@ -100,7 +100,7 @@ export const checkTokenValidity = (token) => {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
         },
-    });
+    })
         .then(response)
         .catch((err) => console.log(`Ошибка ${err.status} - ${err.statusText}`));
 };
@@ -113,7 +113,7 @@ export const updateUserInfo = (data) => {
             Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(data),
-    });
+    })
         .then(response)
         .catch((err) => console.log(`Ошибка ${err.status} - ${err.statusText}`));
 };
