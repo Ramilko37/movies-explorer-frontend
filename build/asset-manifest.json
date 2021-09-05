@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cc743dbc.chunk.css",
+    "main.js": "/static/js/main.1b144a2e.chunk.js",
+    "main.js.map": "/static/js/main.1b144a2e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.48ffb82b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.48ffb82b.js.map",
+    "static/js/2.f2b8519d.chunk.js": "/static/js/2.f2b8519d.chunk.js",
+    "static/js/2.f2b8519d.chunk.js.map": "/static/js/2.f2b8519d.chunk.js.map",
+    "static/js/3.8fd53341.chunk.js": "/static/js/3.8fd53341.chunk.js",
+    "static/js/3.8fd53341.chunk.js.map": "/static/js/3.8fd53341.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.cc743dbc.chunk.css.map": "/static/css/main.cc743dbc.chunk.css.map",
+    "static/js/2.f2b8519d.chunk.js.LICENSE.txt": "/static/js/2.f2b8519d.chunk.js.LICENSE.txt",
+    "static/media/SavedMovies.css": "/static/media/Inter-Regular.e148c4a1.woff",
+    "static/media/close.80dfd5bd.svg": "/static/media/close.80dfd5bd.svg",
+    "static/media/harold.a905db05.jpg": "/static/media/harold.a905db05.jpg",
+    "static/media/logo.64932df0.svg": "/static/media/logo.64932df0.svg",
+    "static/media/openPopup.08035af1.svg": "/static/media/openPopup.08035af1.svg",
+    "static/media/profile.a82faba9.svg": "/static/media/profile.a82faba9.svg",
+    "static/media/Promo.css": "/static/media/promo-bg-logo.4d186245.svg",
+    "static/media/MoviesCard.css": "/static/media/save-button.e78b4556.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48ffb82b.js",
+    "static/js/2.f2b8519d.chunk.js",
+    "static/css/main.cc743dbc.chunk.css",
+    "static/js/main.1b144a2e.chunk.js"
+  ]
+}
