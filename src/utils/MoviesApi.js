@@ -1,18 +1,18 @@
-const BASE_MOVIES_URL = 'https://api.nomoreparties.co/beatfilm-movies';
+import { URL_NOMOREPATIES } from "./constants";
 
-export const getMovies = () => {
-    return fetch(`${BASE_MOVIES_URL}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    }).then((res) => {
-        if (res.ok) {
-            return res.json();
-        } else {
-            return Promise.reject(
-                new Error(`Ошибка ${res.status} - ${res.statusText}`)
-            );
-        }
-    });
+const checkAnswerCorrectness = (response) => {
+  if (response.ok) {
+    return response.json();
+  }
+
+  return Promise.reject(new Error(`Ошибка ${response.status}`));
 };
+
+export const getMovies = () =>
+  fetch(`${URL_NOMOREPATIES}/beatfilm-movies`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then((res) => checkAnswerCorrectness(res));

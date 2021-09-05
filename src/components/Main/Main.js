@@ -1,24 +1,23 @@
-import React from "react"
-import Promo from "../Promo/Promo";
-import Navbar from "../Navtab/Navbar";
-import Project from "../Project/Project";
-import Techs from "../Techs/Techs";
-import Student from "../Student/Student";
-import Portfolio from "../Portfolio/Portfolio";
-import Footer from "../Footer/Footer";
+import React from "react";
+import Promo from '../Promo/Promo';
+import NavTab from '../NavTab/NavTab';
+import "./Main.css";
+import AboutProject from '../AboutProject/AboutProject';
+import Techs from '../Techs/Techs';
+import AboutMe from '../AboutMe/AboutMe';
+import Portfolio from '../Portfolio/Portfolio';
 
-
-const Main = () => {
-    return (
-       <main className="main">
-            <Promo />
-            <Navbar />
-            <Project />
-            <Techs />
-            <Student />
-            <Portfolio />
-       </main>
-    )
+function Main() {
+  return (
+    <div className = 'main'>
+      <Promo />
+      <NavTab/>
+      <AboutProject />
+      <Techs />
+      <AboutMe />
+      <Portfolio />
+    </div>
+  );
 }
 
 export default Main;

@@ -1,53 +1,105 @@
-import React from 'react';
-import './MoviesCardList.css';
-import MoviesCard from '../MoviesCard/MoviesCard';
+import React, { useState, useEffect } from "react";
+import MoviesCard from "../MoviesCard/MoviesCard";
+import Preloader from "../Preloader/Preloader";
+import './MoviesCardList.css'
+import { pcWidth, tabletWidth, phoneWidth } from "../../utils/constants";
 
-const MoviesCardList = ({
-                            movieCards,
-                            onSaveMovie,
-                            errorLoaded,
-                            savedMovieList,
-                            onRemoveSaveMovie,
-                        }) => {
+function MoviesCardList({
+  foundMovies,
+  preloader,
+  toggleLikeHandler,
+  savedMovies,
+  movieAdded,
+}) {
+  const [showFoundMovies, setShowFoundMovies] = useState([]);
+  let count;
 
-    return (
-        <section className='card-list'>
+  function getQuantity(windowSize) {
+    if (windowSize >= pcWidth) {
+      return { first: 12, next: 3 };
+    }
+    if (windowSize > phoneWidth && windowSize <= tabletWidth) {
+      return { first: 8, next: 2 };
+    }
+    return { first: 5, next: 2 };
+  }
 
+  const resizeHandler = () => {
+    const windowSize = window.innerWidth;
+    const countFirst = getQuantity(windowSize);
+    if (!count || count.first !== countFirst.first) {
+      count = countFirst;
+      setShowFoundMovies(foundMovies.slice(0, count.first));
+    }
+  };
 
-            {movieCards.length !== 0 ? (
-                movieCards.map((item) => {
-                    return (
-                        <MoviesCard
-                            key={item.id}
-                            card={item}
-                            onSaveMovie={onSaveMovie}
-                            savedMovieList={savedMovieList}
-                            onRemoveSaveMovie={onRemoveSaveMovie}
-                        />
-                    );
-                })
-            ) : errorLoaded ? (
-                ''
-            ) : (
-                <p className='moviesCardList__text'>
-                    Нажмите "Найти" для вывода списка фильмов или введите ключевое слово
-                    для поиска конкретного
-                </p>
-            )}
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
 
+  useEffect(() => {
+    resizeHandler();
+  }, []);
 
-            <div className="card-list__wrapper">
-                <button className='card-list__more-button'>Ещё</button>
-            </div>
+  useEffect(() => {
+    const windowSize = window.innerWidth;
+    const countFirst = getQuantity(windowSize);
+    count = countFirst;
+    setShowFoundMovies(foundMovies.slice(0, count.first));
+  }, [foundMovies]);
 
-
-        </section>
+  function addMore() {
+    const windowSize = window.innerWidth;
+    const countNext = getQuantity(windowSize);
+    count = countNext;
+    const last = showFoundMovies.length;
+    setShowFoundMovies(
+      showFoundMovies.concat(foundMovies.slice(last, last + count.next))
     );
+  }
+
+  return (
+    <>
+      <div className='line'></div>
+      {showFoundMovies.length !== 0 ? (
+        <>
+          {preloader ? (
+            <Preloader />
+          ) : (
+            <>
+              <section className='movies-cards'>
+                {showFoundMovies.map((item) => {
+                  return (
+                    <MoviesCard
+                      card={item}
+                      key={item.id}
+                      toggleLikeHandler={toggleLikeHandler}
+                      savedMovies={savedMovies}
+                      movieAdded={movieAdded}
+                    />
+                  );
+                })}
+              </section>
+              {showFoundMovies.length < foundMovies.length && (
+                <div className='movies-loading'>
+                  <button
+                    onClick={addMore}
+                    className='movies-btn'
+                  >
+                    Еще
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+        </>
+      ) : (
+        <h3 className='text-nothing-found'>Ничего не найдено</h3>
+      )}
+    </>
+  );
 }
-
-
 export default MoviesCardList;
-
-
-
-

@@ -1,81 +1,29 @@
-.card-list {
-    max-width: 1280px;
-    width: 100%;
-    margin: auto;
-    box-sizing: border-box;
-    padding: 0 70px;
-  }
+@import url(../../vendor/normalize.css);
+@import url(../../fonts/inter/Inter_Web/inter.css);
 
-  .card-list__list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 364px);
-    row-gap: 32px;
-    column-gap: 20px;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: auto;
-    margin-bottom: 19px;
-  }
+.movies-cards {
+  margin: auto;
+  margin-top: 70px;
+  width: 89.06%;
+  display: grid;
+  grid-template-columns: repeat(3, 364px);
+  gap: 17px;
+}
 
-  .card-list__more-button {
-    padding: 0;
-    margin: 20px auto 60px;
-    width: 320px;
-    height: 36px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    background: #F9F9F9;
-    color: #000;
-    transition: opacity .5s;
-  }
-
-@media screen and (max-width: 425px) {
-  .card-list__more-button {
-    width: 240px;
+@media screen and (max-width: 768px){
+  .movies-cards {
+    width: 92.19%;
+    grid-template-columns: repeat(2, 48.31%);
+    column-gap: 3.39%;
+    row-gap: 35px;
   }
 }
 
-
-.card-list__wrapper {
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 425px){
+  .movies-cards {
+    width: 93.75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
 }
-
-
-
-  .card-list__more-button:hover {
-    cursor: pointer;
-    opacity: .8;
-  }
-
-  @media screen and (max-width: 1023px) {
-    .card-list {
-      padding: 0 30px;
-    }
-
-    .card-list__list {
-      grid-template-columns: repeat(auto-fill, 339px);
-    }
-
-    .card-list__list {
-      margin-bottom: 30px;
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    .card-list {
-      padding: 0 10px;
-    }
-
-    .card-list__list {
-      grid-template-columns: repeat(auto-fill, 300px);
-      grid-row-gap: 16px;
-    }
-  }

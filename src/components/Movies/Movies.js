@@ -1,99 +1,49 @@
-import { React, useState } from 'react';
 import './Movies.css';
-
-import SearchForm from '../SearchForm/SearchForm';
+import SearchForm from '../SearchForm/SearchForm'
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import Preloader from '../Preloader/Preloader';
+import React, { useState } from "react";
+import { DURATION_MOVIE } from "../../utils/constants";
 
-const Movies = ({
-                    windowWidth,
-                    movieSearch,
-                    movieSearchError,
-                    isLoaded,
-                    filteredMovieList,
-                    addFilteredMovie,
-                    movieList,
-                    errorLoaded,
-                    handleMovieInput,
-                    localStorageMovies,
-                    onSaveMovie,
-                    savedMovie,
-                    savedMovieList,
-                    onRemoveSaveMovie,
-                }) => {
-    let moviesNumber = 12;
-    let newMoviesNumber = 3;
-    const [amountOfMovies, setAmountOfMovies] = useState(moviesNumber);
+function Movies({
+  toggleLikeHandler,
+  movieAdded,
+  savedMovies,
+  handleSearchMovies,
+  preloader,
+  presenceFilms,
+  foundMovies
+}) {
 
-    if (windowWidth > 768) {
-        moviesNumber = 12;
-        newMoviesNumber = 3;
-    } else if (windowWidth > 500) {
-        moviesNumber = 8;
-        newMoviesNumber = 2;
-    } else if (windowWidth <= 500) {
-        moviesNumber = 5;
-        newMoviesNumber = 2;
-    }
+  const [filter, setfilter] = useState(false);
+  
+  const filterMovies = (movies) =>
+    movies.filter((item) => {
+      return item.duration < DURATION_MOVIE;
+    });
 
-    function numberOfMovies() {
-        setAmountOfMovies(amountOfMovies + newMoviesNumber);
-    }
-    return (
-        <>
-            <SearchForm
-                handleMovieInput={handleMovieInput}
-                value={movieSearch}
-                movieList={movieList}
-                addFilteredMovie={addFilteredMovie}
-                movieSearchError={movieSearchError}
-            />
+  const onFilter = () => {
+    setfilter(!filter);
+  };
 
-            {errorLoaded ? (
-                <p className='movies__errorText'>
-                    Во время запроса произошла ошибка. Возможно, проблема с соединением
-                    или сервер недоступен. Подождите немного и попробуйте ещё раз
-                </p>
-            ) : (
-                ''
-            )}
 
-            {isLoaded ? (
-                <Preloader />
-            ) : (
-                <MoviesCardList
-                    movieCards={
-                    filteredMovieList.length !== 0
-                        ? filteredMovieList.slice(0, amountOfMovies)
-                        : ''
-                }
-                                 savedMovieList={savedMovieList}
-                                 savedMovie={savedMovie}
-                                 onSaveMovie={onSaveMovie}
-                                 errorLoaded={errorLoaded}
-                                 onRemoveSaveMovie={onRemoveSaveMovie}
-                />
-            )}
-            {localStorageMovies ? (
-                <div className='movie__button-wrapper'>
-                    <button
-                        className={`movie__open-more ${
-                            filteredMovieList.length <= 12 ||
-                            amountOfMovies >= localStorageMovies.length
-                                ? 'movie__open-more_hidden'
-                                : ''
-                        }`}
-                        type='button'
-                        onClick={numberOfMovies}
-                    >
-                        Ещё
-                    </button>
-                </div>
-            ) : (
-                ''
-            )}
-        </>
-    )
-};
+  return (
+    <div className = 'movies'>
+    <SearchForm onSearch={handleSearchMovies} onFilter={onFilter} />
+      <section>
+        {presenceFilms ? (
+          <MoviesCardList
+            foundMovies={filter ? filterMovies(foundMovies) : foundMovies}
+            preloader={preloader}
+            toggleLikeHandler={toggleLikeHandler}
+            savedMovies={savedMovies}
+            movieAdded={movieAdded}
+          />
+        ) : (
+          <h3>Ничего не найдено</h3>
+        )}
+      </section>
+    </div>
+  );
+}
 
 export default Movies;
