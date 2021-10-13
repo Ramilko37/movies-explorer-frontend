@@ -1,0 +1,66 @@
+.navtab__container {
+    background-color: #000;
+    width: 100%;
+    padding: 24px 0;
+  }
+  
+  .navtab__item {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  .navtab__item:last-of-type {
+    margin-right: 0;
+  } 
+  
+  .navtab__link {
+    color: #fff;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .navtab__list {
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navtab__link {
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    .navtab__list {
+      gap: 0;
+    }
+  
+    .navtab__item {
+      height: 26px;
+      width: 82px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .navtab__link {
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    .navtab__list {
+      gap: 0;
+    }
+  
+    .navtab__item {
+      height: 26px;
+      width: 82px;
+      margin-right: 24px;
+      width: fit-content;
+      height: fit-content;
+    }
+  }
